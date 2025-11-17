@@ -5,12 +5,12 @@ docker build -t <your-dockerhub-username>/<image-name>:<tag>
 ```
 Example:
 ```txt 
-docker build -t orky/pyt:v0.1 .
+docker build -t 5ylviax/pyt:v0.1 .
 ```
 
 ## Test Image Locally 
 ```txt
-docker run -it --rm orky/pyt:v0.1 bash
+docker run -it --rm 5ylviax/pyt:v0.1 bash
 ```
 (with out the **bash** opens *Python* not the shell)
 - to exit the container type **exit** 
@@ -26,18 +26,19 @@ docker login
 ```
 
 2. Push the image 
-``` docker push orky/pyt:v0.1
+```txt 
+ docker push 5ylviax/pyt:v0.1
 ```
 this uploads your image so GitHub Actions can pull it 
 
 ## GitHub Actions Will Now Use Your Image 
 ```yaml 
 conatiner: 
-    image: orly/pyt:v0.1 
+    image: 5ylviax/pyt:v0.1 
 ```
 GitHub Actions will automatically:
 
-pull orky/pyt:v0.1 from Docker Hub
+pull 5ylviax/pyt:v0.1 from Docker Hub
 
 use it as the environment
 
@@ -59,7 +60,7 @@ jobs:
   test-in-container:
     runs-on: ubuntu-latest
     container:
-      image: orky/pyt:v0.1  # <-- your pushed image
+      image: 5ylviax/pyt:v0.1  # <-- your pushed image
 
     steps:
       - name: Check out code
@@ -68,10 +69,20 @@ jobs:
       - name: Run tests in container
         run: pytest
 ```
+## What happens on Every Push Now?
 
+Now that your GitHub Actions workflow is set up, every time you commit and push to GitHub, it will automatically:
+
+- Pull your Docker image
+
+-Run your code inside it
+
+- Execute pytest
+
+- Show PASS / FAIL in the GitHub Actions log
+
+This is called **Continuous Integration (CI)** — exactly what your teacher wants for Quiz 9.
 # Extra info
-
-## Difference 
 | Command | What it Means | When to use it |
 | -------- | -------- | -------- |
 | docker commit  | Save changes from a running container into a new image | When you manually install stuff inside a container |
