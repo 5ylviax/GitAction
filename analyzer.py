@@ -25,6 +25,6 @@ def find_most_common_word(text):
     return most_common_word
 
 
-# print(count_words("hello"))
-# print(count_chars("hello"))
-# print(find_most_common_word("one two three three three"))
+print(count_words("hello"))
+print(count_chars("hello"))
+print(find_most_common_word("one two three three three"))
