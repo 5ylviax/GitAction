@@ -4,8 +4,8 @@ from analyzer import count_words, count_chars, find_most_common_word
 def test_count_words():
     # empty string 
     assert count_words("") == 0
-    assert count_words("Hello world") == "Hello world"
-    assert count_words("One two three four") == "One two three four"
+    assert count_words("Hello world") == 2
+    assert count_words("One two three four") == 4
     with pytest.raises(ValueError):
         count_words(123)
         
