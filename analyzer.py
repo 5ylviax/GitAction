@@ -7,11 +7,20 @@ def count_chars(text):
     char_count = len(text)
     return char_count
 
-def find_most_common_word(self, text):
-    from collections import Counter
+def find_most_common_word(text):
     words = text.split()
     if not words:
         return None
-    word_counts = Counter(words)
-    common, _ = word_counts.most_common(1)[0]
-    return common
+    word_counts = {}
+    for word in words:
+        word_counts[word] = word_counts.get(word, 0) + 1
+        
+    most_common_word = None
+    max_count = 0
+    
+    for word, count in word_counts.items():
+        if count > max_count:
+            max_count = count
+            most_common_word = word
+
+    return most_common_word
