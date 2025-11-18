@@ -20,6 +20,6 @@ def test_find_most_common_word():
     assert find_most_common_word("apple banana apple") == "apple"
     assert find_most_common_word("one two two three three three") == "three"
     assert find_most_common_word("") == 0
-    with pytest.raises("ValueError"):
+    with pytest.raises(ValueError):
         find_most_common_word(456)
         
