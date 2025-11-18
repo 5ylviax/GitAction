@@ -1,25 +1,32 @@
 def count_words(text):
+    word_count = 0
     if not isinstance(text, str):
+        raise ValueError("not a string")
+    elif text == "":
         return 0
-
-    words = text.split()
-    word_count = len(words)
+    else:
+        words = text.split()
+        word_count = len(words)
     return word_count
 
 def count_chars(text):
     if not isinstance(text, str):
+        raise ValueError("not a string")
+    elif text == "":
         return 0
-    char_count = len(text)
-    return char_count
+    else:
+        char_count = len(text)
+        return char_count
 
 def find_most_common_word(text):
     if not isinstance(text, str):
-        return 0
-    
+        raise ValueError("not a string")
+    if text == "":
+        return 0 
     words = text.split()
-    if not words:
-        return None
+    
     word_counts = {}
+    
     for word in words:
         word_counts[word] = word_counts.get(word, 0) + 1
         
