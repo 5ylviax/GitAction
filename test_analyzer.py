@@ -10,10 +10,10 @@ def count_words():
         count_words(123)
         
 def count_chars():
-    assert count_words('c') == 'c'
-    assert count_words('hello') == 'hello'
-    with pytest.raises("ValueError"):
-        count_words(3)
+    assert count_chars('c') == 'c'
+    assert count_chars('hello') == 'hello'
+    with pytest.raises(ValueError):
+        count_chars(3)
 
 def find_most_common_word():
     assert find_most_common_word("apple banana apple") == "apple"

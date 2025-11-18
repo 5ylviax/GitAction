@@ -1,9 +1,9 @@
-def count_words(self, text):
+def count_words(text):
     words = text.split()
     word_count = len(words)
     return word_count
 
-def count_chars(self, text):
+def count_chars(text):
     char_count = len(text)
     return char_count
 
