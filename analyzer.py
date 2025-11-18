@@ -17,7 +17,6 @@ def find_most_common_word(text):
         
     most_common_word = None
     max_count = 0
-    
     for word, count in word_counts.items():
         if count > max_count:
             max_count = count
