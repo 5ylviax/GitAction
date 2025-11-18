@@ -1,13 +1,21 @@
 def count_words(text):
+    if not isinstance(text, str):
+        return 0
+
     words = text.split()
     word_count = len(words)
     return word_count
 
 def count_chars(text):
+    if not isinstance(text, str):
+        return 0
     char_count = len(text)
     return char_count
 
 def find_most_common_word(text):
+    if not isinstance(text, str):
+        return 0
+    
     words = text.split()
     if not words:
         return None
@@ -24,8 +32,3 @@ def find_most_common_word(text):
 
     return most_common_word
 
-
-# print(count_words("hello"))
-# print(count_words(""))
-# print(count_chars("hello"))
-# print(find_most_common_word("one two three three three"))
