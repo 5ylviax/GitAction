@@ -20,7 +20,7 @@ jobs:
   test-in-container:
     runs-on: ubuntu-latest
     container:
-      image: 5ylviax/pyt:v0.1
+      image: 5ylviax/pyt:v0.2
       # all dependencies (pytest) are already in this docker image hosted as public image in YOUR Docker Hub account
 
     steps:
